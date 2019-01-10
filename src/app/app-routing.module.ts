@@ -9,7 +9,8 @@ import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: MatchListComponent },
-  { path: 'ligaRank/:league', component: RankingComponent, /*canActivate: [AuthGuard]*/ },
+  { path: 'todayMatch/:league', component: MatchListComponent },
+  { path: 'ligaRank/:league', component: RankingComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'favorite', component: MatchSavedComponent}

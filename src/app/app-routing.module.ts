@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'ligaRank/:league', component: RankingComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'favorite', component: MatchSavedComponent, canActivate: [AuthGuard] }
+  { path: 'favorite', component: MatchSavedComponent}
 ];
 
 @NgModule({

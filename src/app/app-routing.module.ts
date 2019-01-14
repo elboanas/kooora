@@ -7,7 +7,11 @@ import { RankingComponent } from './ranking/ranking.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { MatchSavedComponent } from './match/match-saved/match-saved.component';
 import { AuthGuard } from './auth/auth.guard';
+<<<<<<< HEAD
 import { ScorerComponent } from './scorer/scorer.component';
+=======
+import { MatchLiveComponent } from './match/match-live/match-live.component';
+>>>>>>> 9cc6dfda6b6e84b581e89b97de44920a3b99d86e
 
 const routes: Routes = [
   { path: '', component: MatchListComponent },
@@ -17,6 +21,7 @@ const routes: Routes = [
   { path: 'ligaRank/:league', component: RankingComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'live', component: MatchLiveComponent},
   { path: 'favorite', component: MatchSavedComponent}
 ];
 

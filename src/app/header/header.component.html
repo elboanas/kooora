@@ -1,27 +1,28 @@
 <mat-toolbar class="header">
-    
-    
 
-    
+
+
+
     <button mat-button [matMenuTriggerFor]="menu">
         <img src="assets/menu.png">
     </button>
 
     <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-        <img src="assets/home1.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME
-    </button>
-    
-    <button  mat-menu-item [matMenuTriggerFor]="leagues"> <img src="assets/match32.png" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LEAGUES</button>
-    <button mat-menu-item><img src="assets/prediction32.png" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PREDICTIONS</button>
-    <button mat-menu-item><img src="assets/live.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIVE MATCHES</button>
-    <!--<button *ngIf="userIsAuthenticated" mat-menu-item routerLink="/favorite" routerLinkActive="mat-accent"><mat-icon>star</mat-icon></button>
+        <button mat-menu-item>
+            <img src="assets/home1.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME
+        </button>
+
+        <button mat-menu-item [matMenuTriggerFor]="leagues"> <img src="assets/match32.png" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LEAGUES</button>
+        <button mat-menu-item><img src="assets/prediction32.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PREDICTIONS</button>
+        <button mat-menu-item routerLink="/live" routerLinkActive="mat-accent"><img src="assets/live.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIVE
+            MATCHES</button>
+        <!--<button *ngIf="userIsAuthenticated" mat-menu-item routerLink="/favorite" routerLinkActive="mat-accent"><mat-icon>star</mat-icon></button>
     <button *ngIf="!userIsAuthenticated" mat-menu-item routerLink="/signup" routerLinkActive="mat-accent"><mat-icon>person_add</mat-icon></button>
     <button *ngIf="!userIsAuthenticated" mat-menu-item routerLink="/login" routerLinkActive="mat-accent"><mat-icon>person</mat-icon></button>
     <button *ngIf="userIsAuthenticated" mat-menu-item (click)="onLogout()"><mat-icon>person_outline</mat-icon></button>-->
-    <button *ngIf="userIsAuthenticated" mat-menu-item routerLink="/favorite" routerLinkActive="mat-accent"><img src="assets/star.png" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAVORITE</button>
-</mat-menu>
-   <!-- <button mat-button routerLink="/swaggerApi" routerLinkActive="mat-accent">Swagger API</button>-->
+        <button *ngIf="userIsAuthenticated" mat-menu-item routerLink="/favorite" routerLinkActive="mat-accent"><img src="assets/star.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAVORITE</button>
+    </mat-menu>
+    <!-- <button mat-button routerLink="/swaggerApi" routerLinkActive="mat-accent">Swagger API</button>-->
     <mat-menu #leagues="matMenu">
         <button mat-menu-item [matMenuTriggerFor]="spanish"><img src="assets/spain.png">&nbsp;&nbsp;&nbsp;Liga BBVA</button>
         <button mat-menu-item [matMenuTriggerFor]="french"><img src="assets/france.png">&nbsp;&nbsp;&nbsp;Ligue 1</button>
@@ -45,14 +46,14 @@
         <button mat-menu-item routerLink="/todayMatch" routerLinkActive="mat-accent" (click)="getMatchLeague(62)"><img src="assets/today.png">&nbsp;&nbsp;&nbsp;Matches</button>
         <button mat-menu-item routerLink="/scorer" routerLinkActive="mat-accent" (click)="getScorer(62)"><img src="assets/scorer.png">&nbsp;&nbsp;&nbsp;Top Scorers</button>
     </mat-menu>
-     
-<span class="spacer"></span>
 
-<button *ngIf="userIsAuthenticated" mat-button (click)="onLogout()"><img src="assets/exit.png"></button>   
-<button *ngIf="!userIsAuthenticated" mat-button routerLink="/signup" routerLinkActive="mat-accent"><img src="assets/signup.png"></button>
-<button *ngIf="!userIsAuthenticated" mat-button routerLink="/login" routerLinkActive="mat-accent"> <img src="assets/login.png"></button>
+    <span class="spacer"></span>
 
-<!--<ul>
+    <button *ngIf="userIsAuthenticated" mat-button (click)="onLogout()"><img src="assets/exit.png"></button>
+    <button *ngIf="!userIsAuthenticated" mat-button routerLink="/signup" routerLinkActive="mat-accent"><img src="assets/signup.png"></button>
+    <button *ngIf="!userIsAuthenticated" mat-button routerLink="/login" routerLinkActive="mat-accent"> <img src="assets/login.png"></button>
+
+    <!--<ul>
         <li *ngIf="userIsAuthenticated">
             <a mat-button routerLink="/favorite" routerLinkActive="mat-accent">favorite</a>
         </li>

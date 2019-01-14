@@ -31,13 +31,36 @@ export class MatchService {
       .set('from', date)
       .set('to', date)
       .set('league_id', idLeague)
-      .set('APIkey', '66869ef860f058236e75d7466b804e053882c52a10c152f3111bef56e5463c4a');
+      .set('APIkey', '04f3c7e3a2e8e0eb93efad3ca8a2b647229b9afb6ec4a4f56ad5229623f52158');
 
     //let matchsObservable:Observable<any> = this.http.get(environment.footballApi,{ params: params });
     //return matchsObservable
     /*let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Access-Control-Allow-Headers', 'Authorization ')
       .append('Authorization','Bearer ');*/
+    return this.http.
+      get(environment.footballApi, { params })
+      .pipe(map((apiMatchs: any) =>
+        apiMatchs.map((apiMatch) => {
+          let appMatch: IMatch = {
+            hometeam: apiMatch.match_hometeam_name,
+            awayteam: apiMatch.match_awayteam_name,
+            hometeamScore: apiMatch.match_hometeam_score,
+            awayteamScore: apiMatch.match_awayteam_score
+          };
+          return appMatch;
+        })
+      ));
+  }
+  getLiveMatchs(idLeague:string, date:string): Observable<IMatch[]> {
+
+    let params = new HttpParams()
+      .set('action', 'get_events')
+      .set('from', date)
+      .set('to', date)
+      .set('league_id', idLeague)
+      .set('match_live', '1')
+      .set('APIkey', '04f3c7e3a2e8e0eb93efad3ca8a2b647229b9afb6ec4a4f56ad5229623f52158');
     return this.http.
       get(environment.footballApi, { params })
       .pipe(map((apiMatchs: any) =>

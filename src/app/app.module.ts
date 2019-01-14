@@ -33,6 +33,7 @@ import { TestMatTableComponent } from './test-mat-table/test-mat-table.component
 import { LoginComponent } from './auth//login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { MatchSavedComponent } from './match/match-saved/match-saved.component';
+import { MatchLiveComponent} from './match/match-live/match-live.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
@@ -44,6 +45,7 @@ import { SwaggerApiComponent } from './swagger-api/swagger-api.component';
     HeaderComponent,
     MatchListComponent,
     MatchSavedComponent,
+    MatchLiveComponent,
     RankingComponent,
     TestMatTableComponent,
     LoginComponent,
